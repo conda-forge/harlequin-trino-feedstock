@@ -1,5 +1,5 @@
 {% set name = "harlequin-trino" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_trino-{{ version }}.tar.gz
-  sha256: bea556eb232d69aabb375b2c62d6624e74d4b68fd8017dd6481dbcabcdbf618d
+  sha256: a6144913fab80dc0f56f8e95222013d2a92772632d51d39a2f61a96c206e2f12
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,6 +20,8 @@ requirements:
     - poetry-core
     - pip
   run:
+    - google-auth >=2.38.0,<3.0.0
+    - numpy >=2.2.4,<3.0.0
     - python >={{ python_min }},<4.0
     - harlequin >=1.7,<3
     - trino-python-client >=0.327.0,<0.328.0
