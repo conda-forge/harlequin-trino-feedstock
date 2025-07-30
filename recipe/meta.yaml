@@ -1,5 +1,5 @@
 {% set name = "harlequin-trino" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/harlequin_trino-{{ version }}.tar.gz
-  sha256: a6144913fab80dc0f56f8e95222013d2a92772632d51d39a2f61a96c206e2f12
+  sha256: 12a867bbd49e1e7ee219a1d19f33f4f8236abdad57638bbdcd06cfbaa922b9c2
 
 build:
   noarch: python
